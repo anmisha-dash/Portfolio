@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anmisha | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- navbar -->
+  <nav class="nav">
+    <div class="logo">Anmisha</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+  </nav>
+
+  <!-- mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" onclick="toggleMenu()">About</a>
+    <a href="#skills" onclick="toggleMenu()">Skills</a>
+    <a href="#projects" onclick="toggleMenu()">Projects</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+  </div>
+
+  <!-- hero -->
+  <section class="hero" id="about">
+    <div class="hero-left">
+      <div class="badge">Open to Internships</div>
+      <h1>Hi, I'm <span class="highlight">Anmisha</span><br>
+          CSE Student &amp;<br>
+          Web Developer</h1>
+      <p>2nd year CSE student passionate about building web apps. Currently on a 30-day coding challenge — pushing a new project every single day.</p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="#contact" class="btn-outline">Contact Me</a>
+      </div>
+    </div>
+    <div class="avatar">A</div>
+  </section>
+
+  <!-- skills -->
+  <section class="section" id="skills">
+    <h2 class="sec-title">Skills</h2>
+    <div class="skills">
+      <span class="skill">HTML5</span>
+      <span class="skill">CSS3</span>
+      <span class="skill">JavaScript</span>
+      <span class="skill">Flexbox</span>
+      <span class="skill">CSS Grid</span>
+      <span class="skill">Responsive Design</span>
+      <span class="skill">CSS Animations</span>
+      <span class="skill">Git &amp; GitHub</span>
+    </div>
+  </section>
+
+  <!-- projects -->
+  <section class="section" id="projects">
+    <h2 class="sec-title">30-Day Projects</h2>
+    <div class="projects-grid">
+
+      <div class="proj-card">
+        <div class="proj-day">Day 01</div>
+        <div class="proj-name">Profile Card</div>
+        <div class="proj-tech">HTML · CSS</div>
+        <a href="https://github.com/anmisha-dash/day-01-profile-card" target="_blank" class="proj-link">View →</a>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-day">Day 02</div>
+        <div class="proj-name">Navigation Bar</div>
+        <div class="proj-tech">Flexbox</div>
+        <a href="https://github.com/anmisha-dash/day-02-navbar" target="_blank" class="proj-link">View →</a>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-day">Day 03</div>
+        <div class="proj-name">Pricing Table</div>
+        <div class="proj-tech">CSS Grid</div>
+        <a href="https://github.com/anmisha-dash/day-03-pricing-table" target="_blank" class="proj-link">View →</a>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-day">Day 04</div>
+        <div class="proj-name">Login Form UI</div>
+        <div class="proj-tech">Forms · CSS</div>
+        <a href="https://github.com/anmisha-dash/day-04-login-form" target="_blank" class="proj-link">View →</a>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-day">Day 05</div>
+        <div class="proj-name">Image Gallery</div>
+        <div class="proj-tech">Grid · Transitions</div>
+        <a href="https://github.com/anmisha-dash/day-05-image-gallery" target="_blank" class="proj-link">View →</a>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-day">Day 06</div>
+        <div class="proj-name">Animated Buttons</div>
+        <div class="proj-tech">CSS Animations</div>
+        <a href="https://github.com/anmisha-dash/day-06-animated-buttons" target="_blank" class="proj-link">View →</a>
+      </div>
+
+      <div class="proj-card coming">
+        <div class="proj-day">Day 07</div>
+        <div class="proj-name">Portfolio</div>
+        <div class="proj-tech">HTML · CSS · JS</div>
+        <span class="proj-link">You are here!</span>
+      </div>
+
+      <div class="proj-card coming">
+        <div class="proj-day">Day 08+</div>
+        <div class="proj-name">Coming Soon...</div>
+        <div class="proj-tech">JavaScript</div>
+        <span class="proj-link">In progress</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- contact -->
+  <section class="section" id="contact">
+    <h2 class="sec-title">Contact</h2>
+    <p class="contact-text">Feel free to reach out — I'm always open to new opportunities!</p>
+    <div class="contact-links">
+      <a href="https://github.com/anmisha-dash" target="_blank" class="contact-link">GitHub</a>
+      <a href="#" class="contact-link">LinkedIn</a>
+      <a href="mailto:your@email.com" class="contact-link">Email</a>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer class="footer">
+    Built with HTML &amp; CSS · 30 Days 30 Projects Challenge
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('open');
+    }
+
+    // smooth scroll active link highlight
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(sec => {
+        if (window.scrollY >= sec.offsetTop - 80) {
+          current = sec.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

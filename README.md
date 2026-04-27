@@ -3,7 +3,7 @@
 A dark-themed personal portfolio website built with pure HTML and CSS.
 
 ## Preview
-![Portfolio](screenshot.png)
+![Portfolio](Portfolio.jpeg)
 
 ## Features
 - Sticky navbar with smooth scroll
